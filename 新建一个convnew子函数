@@ -1,0 +1,14 @@
+%convnew.m
+function [y,ny]= convnew(x,nx,h,nh)%建立convnew子函数
+%x为一信号幅度样值向量，nx为x对应的时间向量
+%h为另一信号或系统冲激函数的非零样值向量，nh为h对应的时间向量
+%y为卷积积分的非零样值向量，ny为其对应的时间向量
+n1=nx(1)+nh(1);   %计算y的非零样值的起点位置
+n2=nx(length(x))+nh(length(h));%计算y的非零样值的宽度
+ny=n1:n2;        %确定y的非零样值时间向量
+y=conv(x,h);
+--------------------- 
+作者：linzch3 
+来源：CSDN 
+原文：https://blog.csdn.net/linzch3/article/details/69062948?utm_source=copy 
+版权声明：本文为博主原创文章，转载请附上博文链接！
